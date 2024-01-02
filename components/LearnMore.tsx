@@ -2,15 +2,17 @@ import Image from "next/image";
 import React from "react";
 import LabelInput from "./LabelInput";
 import Button from "./Button";
+import greenMarbleBg from "../public/dark_green_marble.jpg";
 
 const LearnMore = () => {
   return (
-    <section className="relative">
+    <section className="relative h-screen flex items-center justify-center">
       <Image
-        src="/dark_green_marble.jpg"
+        src={greenMarbleBg}
         alt="background image"
         fill
         className="object-cover blur-[1px] -z-10"
+        placeholder="blur"
       />
       <div className="container mx-auto my-10">
         <div className="text-white mx-2 flex flex-col gap-10 md:mx-[10%] lg:mx-[20%] justify-between ">

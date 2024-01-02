@@ -1,15 +1,17 @@
 import Image from "next/image";
 import React from "react";
 import Button from "./Button";
+import forest from "../public/bosque-nuboso.webp";
 
 const Hero = () => {
   return (
     <section className="relative w-screen h-screen">
       <Image
-        src="/bosque-nuboso.webp"
+        src={forest}
         alt="forest"
         fill
         className="object-cover"
+        placeholder="blur"
       />
       <div className="relative h-screen z-10 flex flex-col items-center justify-around lg:flex-row lg:justify-center">
         <div className="relative w-[95vw] h-[18vh] lg:w-1/2 lg:right-[25vw] lg:mt-32">

@@ -1,3 +1,4 @@
+import AutoplayIntro from "@/components/AutoplayIntro";
 import EmailWhatsapp from "@/components/EmailWhatsapp";
 import Facilities from "@/components/Facilities";
 import FancyDescription from "@/components/FancyDescription";
@@ -21,10 +22,12 @@ export default function Home() {
       <FancyDescription />
       <Features />
       <MapIntro />
+      <AutoplayIntro />
       <PublicUtilities />
       <SellingPoint />
       <Facilities />
       <UnitLayout />
+      <PropertyGalleries />
       <LearnMore />
     </div>
   );

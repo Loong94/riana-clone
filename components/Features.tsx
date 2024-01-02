@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
+import forest from "../public/bosque-nuboso.webp";
 
 const Features = () => {
   const data = [
@@ -36,47 +36,50 @@ const Features = () => {
     },
   ];
   return (
-    <section className="relative h-screen">
-      <div className="absolute inset-0 -z-1">
+    <section className="relative">
+      <div className="container mx-auto w-[95%] lg:w-3/4 my-10">
         <Image
-          src="/bosque-nuboso.webp"
+          src={forest}
           alt="forest"
           fill
-          className="blur-[2px]"
+          className="-z-10 blur-[2px]"
+          sizes="50vw"
+          placeholder="blur"
         />
-      </div>
-      <div className="absolute z-10 w-full h-screen flex flex-col items-center justify-evenly">
-        <div className="py-2 text-white">
-          <h1 className="text-center mb-3 regular-24 md:regular-32 lg:regular-52">
-            UNIQUE FEATURES
-          </h1>
-          <p className="text-center regular-16 md:regular-18 lg:regular-24">
-            THE INTRICATE DETAILS THAT CRAFT OUT PERFECTION
-          </p>
-        </div>
-        <div className="grid gap-2 grid-cols-2 sm:gap-5 md:gap-y-10 lg:grid-cols-3 lg:gap-y-16">
-          {data.map((x) => {
-            return (
-              <React.Fragment key={x.title}>
-                <article className="grid place-items-center transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl rounded-2xl">
-                  <div className="relative rounded-2xl grid-element w-1/3 h-[10vh] lg:h-[16vh] lg:w-[20vw]">
-                    <Image
-                      fill
-                      className="rounded-2xl object-contain transition-transform duration-300 transform group-hover:scale-105"
-                      src={x.image}
-                      alt=""
-                    />
-                  </div>
-                  <h2 className="text-center text-white bold-14 sm:regular-16 md:bold-20 lg:bold-24">
-                    {x.title}
-                  </h2>
-                  <p className="text-center text-white regular-14 sm:regular-16 md:regular-18 lg:regular-24">
-                    {x.desc}
-                  </p>
-                </article>
-              </React.Fragment>
-            );
-          })}
+        <div className="z-10 gap-10 flex flex-col items-center justify-evenly">
+          <div className="text-white">
+            <h1 className="text-center mb-3 regular-24 md:regular-32 lg:regular-52">
+              UNIQUE FEATURES
+            </h1>
+            <p className="text-center regular-16 md:regular-18 lg:regular-24">
+              THE INTRICATE DETAILS THAT CRAFT OUT PERFECTION
+            </p>
+          </div>
+          <div className="grid gap-2 grid-cols-2 sm:gap-5 md:gap-y-10 lg:grid-cols-3 lg:gap-y-16">
+            {data.map((x) => {
+              return (
+                <React.Fragment key={x.title}>
+                  <article className="relative grid place-items-center transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl rounded-2xl">
+                    <div className="relative rounded-2xl grid-element w-1/3 h-[10vh] lg:h-[16vh] lg:w-[20vw]">
+                      <Image
+                        fill
+                        className="rounded-2xl object-contain transition-transform duration-300 transform group-hover:scale-105"
+                        src={x.image}
+                        alt=""
+                        sizes="50vw"
+                      />
+                    </div>
+                    <h2 className="text-center text-white bold-14 sm:regular-16 md:bold-20 lg:bold-24">
+                      {x.title}
+                    </h2>
+                    <p className="text-center text-white regular-14 sm:regular-16 md:regular-18 lg:regular-24">
+                      {x.desc}
+                    </p>
+                  </article>
+                </React.Fragment>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

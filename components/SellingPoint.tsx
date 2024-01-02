@@ -11,7 +11,7 @@ const SellingPoint = () => {
         </h1>
         <div className="relative w-11/12 md:w-4/5 h-2/5 lg:h-3/5 ">
           <Image
-            src="/car_area.gif"
+            src="/car_area.webp"
             alt="Popular City"
             fill
             className="object-fill"

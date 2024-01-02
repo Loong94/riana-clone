@@ -1,39 +1,63 @@
 import Image from "next/image";
 import React from "react";
+import wood from "../public/wood.webp";
+import leaves from "../public/leaves.webp";
 
 const FancyDescription = () => {
   return (
     <section className="relative h-screen bg-black">
       <div className="h-screen flex flex-col items-center justify-evenly lg:flex-row">
-        <div className="grid grid-cols-1 justify-between items-center gap-10 w-[75vw] lg:w-1/3">
-          <h1 className="text-2xl font-serif text-gray-200 text-left regular-24 md:regular-32 lg:regular-52 ">
+        <div className="grid grid-cols-1 justify-between items-center gap-y-5 md:gap-y-10 w-[75vw] lg:w-1/3">
+          <h1 className="leading-none font-serif text-gray-200 text-left regular-32 md:regular-40 lg:regular-52 ">
             EPITOME OF ELEGANCE AND NATURE
           </h1>
-          <p className="text-white text-left md:regular-18 lg:regular-24">
+          <p className="text-white text-left regular-16 md:regular-18 lg:regular-24">
             Sitting atop a gentle hillside, TREES RESIDENCE is an urban paradise
             created to enhance the quality of life. Its elevated location is
             ideal for harnessing the ﬂowing positive energy from all sides of an
             excellent living environment.
           </p>
         </div>
-        <div className="w-full h-[45vh] grid grid-cols-2 gap-4 items-center relative lg:w-1/2 lg:h-[66vh] ">
-          <div className="absolute h-[45vh] w-[42.5vw] ml-[5vw] lg:w-1/2 lg:h-[66vh] lg:ml-0 ">
+        <div className="relative w-4/5 h-1/2 gap-x-5 flex flex-row justify-start lg:w-1/2 lg:h-4/5 ">
+          <div className="relative w-1/2 md:w-2/5 lg:w-1/2 ">
             <Image
-              src="/wood.webp"
+              src={wood}
               alt="wood"
               fill
-              className="h-auto w-1/2 object-contain "
+              className="object-contain object-left"
+              sizes="50vw"
+            />
+          </div>
+          <div className="relative w-1/2 md:w-2/5 lg:w-1/2 ">
+            <Image
+              src={leaves}
+              alt="leaves"
+              fill
+              className="object-contain object-left"
+              sizes="50vw"
+            />
+          </div>
+        </div>
+        {/* <div className="w-full h-[45vh] grid grid-cols-2 gap-4 items-center relative lg:w-1/2 lg:h-[66vh] ">
+          <div className="absolute h-[45vh] w-[42.5vw] ml-[5vw] lg:w-1/2 lg:h-[66vh] lg:ml-0 ">
+            <Image
+              src={wood}
+              alt="wood"
+              fill
+              className="h-auto w-1/2 object-contain"
+              sizes="50vw"
             />
           </div>
           <div className="absolute h-[45vh] w-[42.5vw] ml-[52.5vw] lg:w-1/2 lg:h-[66vh] lg:ml-[27.5vw]">
             <Image
-              src="/leaves.webp"
+              src={leaves}
               alt="leaves"
               fill
-              className="h-auto w-1/2 object-contain "
+              className="h-auto w-1/2 object-contain"
+              sizes="50vw"
             />
           </div>
-        </div>
+        </div> */}
         {/* <div className="w-80 h-60 rounded-md overflow-hidden relative">
           <div className="w-full h-full absolute flex transition-all duration-300">
             <div className="relative shrink-0 w-full h-full">

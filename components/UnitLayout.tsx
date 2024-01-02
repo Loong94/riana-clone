@@ -5,8 +5,8 @@ import Button from "./Button";
 const UnitLayout = () => {
   return (
     <section className="bg-[#312828]">
-      <div className="container mx-auto">
-        <div className="flex flex-col mx-2 my-5 gap-y-10 justify-around">
+      <div className="container mx-auto w-[95%] lg:w-3/4">
+        <div className="flex flex-col mx-2 my-10 gap-y-10 justify-around">
           <div>
             <h1 className="text-white regular-40 text-left mb-3">LAYOUT</h1>
             <hr />

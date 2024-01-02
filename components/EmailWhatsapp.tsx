@@ -2,12 +2,18 @@ import Image from "next/image";
 import React from "react";
 import LabelInput from "./LabelInput";
 import Button from "./Button";
+import greenMarbleBg from "../public/dark_green_marble.jpg";
 
 const EmailWhatsapp = () => {
   return (
     <section className="relative h-screen">
       <div className="absolute inset-0">
-        <Image src="/dark_green_marble.jpg" alt="background image" fill />
+        <Image
+          src={greenMarbleBg}
+          alt="background image"
+          fill
+          placeholder="blur"
+        />
       </div>
       <div className="relative z-10 flex flex-col items-center justify-around h-full">
         <h1 className="text-2xl font-serif text-gray-200 md:regular-32 lg:regular-52">
