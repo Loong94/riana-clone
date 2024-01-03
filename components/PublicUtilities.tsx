@@ -43,6 +43,7 @@ const PublicUtilities = () => {
               className="object-fill object-bottom overflow-visible"
               src="/family.png"
               alt="family"
+              sizes="50vw"
             />
           </div>
         </div>

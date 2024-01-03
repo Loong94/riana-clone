@@ -11,8 +11,9 @@ const LearnMore = () => {
         src={greenMarbleBg}
         alt="background image"
         fill
-        className="object-cover blur-[1px] -z-10"
+        className="object-fill -z-10"
         placeholder="blur"
+        quality={10}
       />
       <div className="container mx-auto my-10">
         <div className="text-white mx-2 flex flex-col gap-10 md:mx-[10%] lg:mx-[20%] justify-between ">
@@ -35,6 +36,7 @@ const LearnMore = () => {
               type="button"
               title="SUBMIT"
               variant="btn_green my-3 w-3/4 md:w-1/2 transition-all hover:bg-[#1DA830]"
+              navigate="whatsapp"
             />
           </div>
           <div className="flex flex-col gap-3 w-3/4 md:w-1/2 justify-between">
@@ -43,6 +45,7 @@ const LearnMore = () => {
               title="WHATSAPP US"
               icon="/Digital_Glyph_White.png"
               variant="bg-green-50 px-8 py-2 w-3/4 text-white border-yellow-400 border-[3px] transition-all hover:bg-[#1DA830]"
+              navigate="whatsapp"
             />
             <label className="text-white leading-none w-3/4 text-center">
               WHATSAPP US FOR IMMEDIATE RESPONSE

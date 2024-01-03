@@ -3,6 +3,10 @@ import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import first from "../public/gallery_1.webp";
+import second from "../public/gallery_2.webp";
+import third from "../public/gallery_3.webp";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -20,7 +24,7 @@ const ImageAutoplay = () => {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 5000,
+          delay: 4000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -33,11 +37,12 @@ const ImageAutoplay = () => {
         <SwiperSlide>
           <div className="relative flex h-full w-full items-center justify-center">
             <Image
-              src="/gallery_1.webp"
+              src={first}
               alt="Gallery"
               fill
               className="-z-10 block h-full w-full object-fill blur-[1px]"
-              sizes="50vw"
+              sizes="70vw"
+              placeholder="blur"
             />
             <div className="text-white flex flex-col gap-5 items-center justify-start">
               <h1 className="bold-52 md:bold-64">3R2B</h1>
@@ -55,11 +60,12 @@ const ImageAutoplay = () => {
         <SwiperSlide>
           <div className="relative flex h-full w-full items-center justify-center">
             <Image
-              src="/gallery_2.webp"
+              src={second}
               alt="Gallery"
               fill
               className="-z-10 block h-full w-full object-fill blur-[1px]"
-              sizes="50vw"
+              sizes="70vw"
+              placeholder="blur"
             />
             <div className="text-white text-left flex flex-col gap-5 items-center justify-start">
               <h1 className="bold-20 md:bold-32">BANGSAR SOUTH</h1>
@@ -78,11 +84,12 @@ const ImageAutoplay = () => {
         <SwiperSlide>
           <div className="relative flex h-full w-full items-center justify-center">
             <Image
-              src="/gallery_3.webp"
+              src={third}
               alt="Gallery"
               fill
               className="-z-10 block h-full w-full object-fill blur-[1px]"
-              sizes="50vw"
+              sizes="70vw"
+              placeholder="blur"
             />
             <div className="text-white flex flex-col gap-5 items-center justify-start">
               <h1 className="bold-20 md:bold-32">BANGSAR SOUTH</h1>

@@ -10,7 +10,7 @@ const Hero = () => {
         src={forest}
         alt="forest"
         fill
-        className="object-cover"
+        className="object-cover object-bottom"
         placeholder="blur"
       />
       <div className="relative h-screen z-10 flex flex-col items-center justify-around lg:flex-row lg:justify-center">
@@ -32,12 +32,18 @@ const Hero = () => {
             />
           </div>
           <div className="relative flex flex-col gap-3 w-[65vw] lg:w-2/5 lg:mr-5 lg:mt-[50vh] xl:mr-10 xl:w-5/12">
-            <Button type="button" title="LEARN MORE >" variant="btn_wood" />
+            <Button
+              type="button"
+              title="LEARN MORE >"
+              navigate="#fancy-desc-section"
+              variant="btn_wood"
+            />
             <Button
               type="button"
               title="GET e-Brochure"
               icon="/Digital_Glyph_White.png"
               variant="btn_whatapps_green"
+              navigate="whatsapp"
             />
           </div>
         </div>

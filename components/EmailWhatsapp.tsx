@@ -31,6 +31,7 @@ const EmailWhatsapp = () => {
             type="button"
             title="SUBMIT"
             variant="btn_green mt-5 transition-all hover:bg-[#1DA830]"
+            navigate="whatsapp"
           />
         </div>
         <div className="grid grid-cols-1 gap-1 justify-between">
@@ -42,6 +43,7 @@ const EmailWhatsapp = () => {
             title="WHATSAPP US"
             icon="/Digital_Glyph_White.png"
             variant="bg-green-50 px-8 py-2 text-white border-yellow-400 border-[3px] transition-all hover:bg-[#1DA830]"
+            navigate="whatsapp"
           />
         </div>
       </div>

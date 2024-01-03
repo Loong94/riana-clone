@@ -22,9 +22,9 @@ export default function Home() {
       <FancyDescription />
       <Features />
       <MapIntro />
-      <AutoplayIntro />
       <PublicUtilities />
       <SellingPoint />
+      <AutoplayIntro />
       <Facilities />
       <UnitLayout />
       <PropertyGalleries />

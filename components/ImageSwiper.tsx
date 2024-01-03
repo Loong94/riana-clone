@@ -7,6 +7,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { type Swiper as SwiperTypes } from "swiper";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 
+import first from "../public/gallery_1.webp";
+import second from "../public/gallery_2.webp";
+import third from "../public/gallery_3.webp";
+import fourth from "../public/gallery_4.webp";
+import fifth from "../public/gallery_5.webp";
+import sixth from "../public/gallery_6.webp";
+import seventh from "../public/gallery_7.webp";
+import eighth from "../public/gallery_8.webp";
+
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
@@ -17,35 +26,35 @@ const ImageSwiper = () => {
 
   const images = [
     {
-      src: "/gallery_1.webp",
+      src: first,
       alt: "Property gallery 1",
     },
     {
-      src: "/gallery_2.webp",
+      src: second,
       alt: "Property gallery 2",
     },
     {
-      src: "/gallery_3.webp",
+      src: third,
       alt: "Property gallery 3",
     },
     {
-      src: "/gallery_4.webp",
+      src: fourth,
       alt: "Property gallery 4",
     },
     {
-      src: "/gallery_5.webp",
+      src: fifth,
       alt: "Property gallery 5",
     },
     {
-      src: "/gallery_6.webp",
+      src: sixth,
       alt: "Property gallery 6",
     },
     {
-      src: "/gallery_7.webp",
+      src: seventh,
       alt: "Property gallery 7",
     },
     {
-      src: "/gallery_8.webp",
+      src: eighth,
       alt: "Property gallery 8",
     },
   ];
@@ -72,6 +81,8 @@ const ImageSwiper = () => {
                   alt={image.alt}
                   fill
                   className="block h-full w-full object-fill"
+                  sizes="75vw"
+                  placeholder="blur"
                 />
               </div>
             </SwiperSlide>
@@ -98,6 +109,7 @@ const ImageSwiper = () => {
                   fill
                   className="block h-full w-full object-cover"
                   sizes="25vw"
+                  placeholder="blur"
                 />
               </button>
             </SwiperSlide>
