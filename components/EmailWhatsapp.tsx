@@ -42,8 +42,9 @@ const EmailWhatsapp = () => {
             type="button"
             title="WHATSAPP US"
             icon="/Digital_Glyph_White.png"
-            variant="bg-green-50 px-8 py-2 text-white border-yellow-400 border-[3px] transition-all hover:bg-[#1DA830]"
+            variant="bg-green-50 border-green-50 px-8 py-2 text-white transition-all hover:bg-[#1DA830]"
             navigate="whatsapp"
+            ringColour="ring-yellow-400"
           />
         </div>
       </div>

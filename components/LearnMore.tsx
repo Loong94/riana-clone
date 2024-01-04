@@ -44,8 +44,9 @@ const LearnMore = () => {
               type="button"
               title="WHATSAPP US"
               icon="/Digital_Glyph_White.png"
-              variant="bg-green-50 px-8 py-2 w-3/4 text-white border-yellow-400 border-[3px] transition-all hover:bg-[#1DA830]"
+              variant="bg-green-50 border-green-50 px-8 py-2 w-3/4 text-white transition-all hover:bg-[#1DA830]"
               navigate="whatsapp"
+              ringColour="ring-yellow-400"
             />
             <label className="text-white leading-none w-3/4 text-center">
               WHATSAPP US FOR IMMEDIATE RESPONSE

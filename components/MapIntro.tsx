@@ -91,8 +91,9 @@ const MapIntro = () => {
               type="button"
               title="WHATSAPP US"
               icon="/Digital_Glyph_White.png"
-              variant="bg-green-50 px-8 py-2 w-2/3 text-white border-yellow-400 border-[3px] self-center mb-3 sm:mb-0 transition-all hover:bg-[#1DA830]"
+              variant="bg-green-50 border-green-50 px-8 py-2 w-2/3 text-white self-center mb-3 sm:mb-0 transition-all hover:bg-[#1DA830]"
               navigate="whatsapp"
+              ringColour="ring-yellow-400"
             />
           </div>
         </div>

@@ -8,6 +8,7 @@ interface Props {
   title: string;
   icon?: string;
   variant: string;
+  ringColour?: string;
   navigate: string;
 }
 
@@ -16,21 +17,29 @@ const Button = ({
   title,
   icon,
   variant,
+  ringColour,
   navigate = "whatsapp",
 }: Props) => {
   return (
-    <button type={type} className={`flexCenter rounded-full border ${variant}`}>
-      <label className="cursor-pointer bold-16 whitespace-nowrap px-2">
-        {navigate === "whatsapp" ? (
-          <Link href="https://www.whatsapp.com/" target="_blank">
-            {title}
-          </Link>
-        ) : (
-          <Link href={navigate}>{title}</Link>
+    <Link
+      href={navigate === "whatsapp" ? "https://www.whatsapp.com/" : navigate}
+      target={navigate === "whatsapp" ? "_blank" : ""}
+      className={`relative flexCenter rounded-full border ${variant}`}
+    >
+      <button type={type}>
+        {ringColour && (
+          <div
+            className={`absolute inset-0 rounded-full animate-pulse ring-4 ${ringColour}`}
+          ></div>
         )}
-      </label>
-      {icon && <Image src={icon} alt={title} width={24} height={24} />}
-    </button>
+        <div className="flex flex-row">
+          <label className="cursor-pointer bold-16 whitespace-nowrap px-2">
+            {title}
+          </label>
+          {icon && <Image src={icon} alt={title} width={24} height={24} />}
+        </div>
+      </button>
+    </Link>
   );
 };
 

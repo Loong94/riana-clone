@@ -5,7 +5,7 @@ import forest from "../public/bosque-nuboso.webp";
 
 const Hero = () => {
   return (
-    <section className="relative w-screen h-screen">
+    <section className="relative w-screen h-dvh">
       <Image
         src={forest}
         alt="forest"
