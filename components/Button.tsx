@@ -20,27 +20,42 @@ const Button = ({
   ringColour,
   navigate = "whatsapp",
 }: Props) => {
-  return (
-    <Link
-      href={navigate === "whatsapp" ? "https://www.whatsapp.com/" : navigate}
-      target={navigate === "whatsapp" ? "_blank" : ""}
-      className={`relative flexCenter rounded-full border ${variant}`}
-    >
-      <button type={type}>
-        {ringColour && (
-          <div
-            className={`absolute inset-0 rounded-full animate-pulse ring-4 ${ringColour}`}
-          ></div>
-        )}
+  if (type === "submit") {
+    return (
+      <button
+        type={type}
+        className={`relative flexCenter rounded-full border ${variant}`}
+      >
         <div className="flex flex-row">
           <label className="cursor-pointer bold-16 whitespace-nowrap px-2">
             {title}
           </label>
-          {icon && <Image src={icon} alt={title} width={24} height={24} />}
         </div>
       </button>
-    </Link>
-  );
+    );
+  } else {
+    return (
+      <Link
+        href={navigate === "whatsapp" ? "https://www.whatsapp.com/" : navigate}
+        target={navigate === "whatsapp" ? "_blank" : ""}
+        className={`relative flexCenter rounded-full border ${variant}`}
+      >
+        <button type={type}>
+          {ringColour && (
+            <div
+              className={`absolute inset-0 rounded-full animate-pulse ring-4 ${ringColour}`}
+            ></div>
+          )}
+          <div className="flex flex-row">
+            <label className="cursor-pointer bold-16 whitespace-nowrap px-2">
+              {title}
+            </label>
+            {icon && <Image src={icon} alt={title} width={24} height={24} />}
+          </div>
+        </button>
+      </Link>
+    );
+  }
 };
 
 export default Button;

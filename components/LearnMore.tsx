@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import LabelInput from "./LabelInput";
 import Button from "./Button";
 import greenMarbleBg from "../public/dark_green_marble.jpg";
+import SubmitForm from "./SubmitForm";
 
 const LearnMore = () => {
   return (
@@ -24,21 +24,10 @@ const LearnMore = () => {
               price.
             </p>
           </div>
-          <div className="flex flex-col gap-4 justify-between w-3/4">
-            <LabelInput label="Name" type="text" />
-            <LabelInput
-              label="Email*"
-              placeholder="john.doe@company.com"
-              type="email"
-            />
-            <LabelInput label="Phone" type="tel" />
-            <Button
-              type="button"
-              title="SUBMIT"
-              variant="btn_green my-3 w-3/4 md:w-1/2 transition-all hover:bg-[#1DA830]"
-              navigate="whatsapp"
-            />
-          </div>
+          <SubmitForm
+            formVariant="flex flex-col gap-4 justify-between w-3/4"
+            btnVariant="btn_green my-3 w-3/4 md:w-1/2 transition-all hover:bg-[#1DA830]"
+          />
           <div className="flex flex-col gap-3 w-3/4 md:w-1/2 justify-between">
             <Button
               type="button"

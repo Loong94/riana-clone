@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import LabelInput from "./LabelInput";
 import Button from "./Button";
 import greenMarbleBg from "../public/dark_green_marble.jpg";
+import SubmitForm from "./SubmitForm";
 
 const EmailWhatsapp = () => {
   return (
@@ -19,21 +19,10 @@ const EmailWhatsapp = () => {
         <h1 className="text-2xl font-serif text-gray-200 md:regular-32 lg:regular-52">
           DOWNLOAD e-BROCHURE
         </h1>
-        <div className="flex flex-col items-center justify-between w-auto">
-          <LabelInput label="Name" type="text" />
-          <LabelInput
-            label="Email*"
-            placeholder="john.doe@company.com"
-            type="email"
-          />
-          <LabelInput label="Phone" type="tel" />
-          <Button
-            type="button"
-            title="SUBMIT"
-            variant="btn_green mt-5 transition-all hover:bg-[#1DA830]"
-            navigate="whatsapp"
-          />
-        </div>
+        <SubmitForm
+          formVariant="flex flex-col items-center justify-between w-auto"
+          btnVariant="btn_green mt-5 transition-all hover:bg-[#1DA830]"
+        />
         <div className="grid grid-cols-1 gap-1 justify-between">
           <label className="text-white">
             WHATSAPP US FOR IMMEDIATE RESPONSE
