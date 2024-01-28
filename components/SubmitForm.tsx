@@ -1,8 +1,15 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import LabelInput from "./LabelInput";
 import Button from "./Button";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
+
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import { FormDataSchema } from "@/lib/schema";
+
+type Inputs = z.infer<typeof FormDataSchema>;
 
 interface Props {
   formVariant: string;
@@ -10,28 +17,50 @@ interface Props {
 }
 
 const SubmitForm = ({ formVariant, btnVariant }: Props) => {
-  const { register, handleSubmit } = useForm();
+  const [message, setMessage] = useState("");
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<Inputs>({ resolver: zodResolver(FormDataSchema) });
+
+  const onSubmit = (data: FieldValues) => {
+    console.log(data);
+    setMessage(
+      `Thank you ${data.name} registering. We will send you the details soon.`
+    );
+    reset();
+  };
 
   return (
-    <form
-      className={formVariant}
-      onSubmit={handleSubmit((data) => console.log(data))}
-    >
-      <LabelInput label="Name" type="text" formReg={register("name")} />
-      <LabelInput
-        label="Email*"
-        placeholder="john.doe@company.com"
-        type="email"
-        formReg={register("email")}
-      />
-      <LabelInput
-        label="Phone"
-        placeholder="0121234567"
-        type="tel"
-        formReg={register("tel")}
-      />
-      <Button type="submit" title="SUBMIT" variant={btnVariant} />
-    </form>
+    <>
+      <form className={formVariant} onSubmit={handleSubmit(onSubmit)}>
+        <LabelInput
+          label="Name"
+          type="text"
+          formReg={register("name")}
+          formError={errors.name}
+        />
+        <LabelInput
+          label="Email*"
+          placeholder="john.doe@company.com"
+          type="email"
+          formReg={register("email")}
+          formError={errors.email}
+        />
+        <LabelInput
+          label="Phone"
+          placeholder="0121234567"
+          type="tel"
+          formReg={register("tel")}
+          formError={errors.tel}
+        />
+        <Button type="submit" title="SUBMIT" variant={btnVariant} />
+      </form>
+      <p className="text-white">{message}</p>
+    </>
   );
 };
 
