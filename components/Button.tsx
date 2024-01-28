@@ -9,7 +9,7 @@ interface Props {
   icon?: string;
   variant: string;
   ringColour?: string;
-  navigate: string;
+  navigate?: string;
 }
 
 const Button = ({
@@ -26,11 +26,9 @@ const Button = ({
         type={type}
         className={`relative flexCenter rounded-full border ${variant}`}
       >
-        <div className="flex flex-row">
-          <label className="cursor-pointer bold-16 whitespace-nowrap px-2">
-            {title}
-          </label>
-        </div>
+        <span className="cursor-pointer bold-16 whitespace-nowrap px-2">
+          {title}
+        </span>
       </button>
     );
   } else {
