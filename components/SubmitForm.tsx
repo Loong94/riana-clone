@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import LabelInput from "./LabelInput";
 import Button from "./Button";
-import { FieldValues, useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -26,8 +26,24 @@ const SubmitForm = ({ formVariant, btnVariant }: Props) => {
     formState: { errors },
   } = useForm<Inputs>({ resolver: zodResolver(FormDataSchema) });
 
-  const onSubmit = (data: FieldValues) => {
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
     console.log(data);
+    try {
+      fetch("/api/customer", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          tel: data.tel.replaceAll("+", "").replaceAll("-", ""),
+        }),
+      });
+    } catch (error) {
+      console.error(error);
+    }
+
     setMessage(
       `Thank you ${data.name} registering. We will send you the details soon.`
     );
