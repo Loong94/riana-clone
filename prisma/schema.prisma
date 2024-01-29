@@ -15,7 +15,7 @@ model Customer {
   id           Int      @id @default(autoincrement())
   name         String
   email        String
-  phoneNumber  Int
+  phoneNumber  String
   project      String
   registeredAt DateTime @default(now())
 }
